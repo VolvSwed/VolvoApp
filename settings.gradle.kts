@@ -14,5 +14,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "VolvoClubAndroid"
+rootProject.name = "VolvSwedBY"
 include(":app")

@@ -1,6 +1,6 @@
-# Volvo Club for Android
+# VolvSwedBY for Android
 
-Installable Android client for the Volvo Club Telegram Mini App. It keeps the existing React interface and all club functions, while adding an Android-native container for authentication, secure session storage, navigation, file uploads, downloads, deep links, offline errors and pull-to-refresh.
+Installable Android client for the VolvSwedBY Telegram Mini App. It keeps the existing React interface and all club functions, while adding an Android-native container for authentication, secure session storage, navigation, file uploads, downloads, deep links, offline errors and pull-to-refresh.
 
 ## Included
 
@@ -30,7 +30,7 @@ Requirements: JDK 17, Android SDK 36 and Gradle 8.13.
 gradle :app:assembleDebug
 ```
 
-The APK is created at `app/build/outputs/apk/debug/app-debug.apk`. Every push and pull request also builds a downloadable `volvo-club-debug` artifact in GitHub Actions.
+The APK is created at `app/build/outputs/apk/debug/app-debug.apk`. Every push and pull request also builds a downloadable `volvswedby-debug` artifact in GitHub Actions.
 
 To use another host without changing source:
 
