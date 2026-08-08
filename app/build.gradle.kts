@@ -29,8 +29,8 @@ android {
         applicationId = "club.volvoswed.app"
         minSdk = 23
         targetSdk = 36
-        versionCode = 2
-        versionName = "1.0.1"
+        versionCode = 3
+        versionName = "1.0.2"
 
         buildConfigField("String", "WEB_APP_URL", quoted(webAppUrl))
         buildConfigField("String", "API_BASE_URL", quoted(apiBaseUrl))
