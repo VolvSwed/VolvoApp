@@ -1,6 +1,6 @@
 # VolvSwedBY for Android
 
-Installable Android client for the VolvSwedBY Telegram Mini App. It keeps the existing React interface and all club functions, while adding an Android-native container for authentication, secure session storage, navigation, file uploads, downloads, deep links, offline errors and pull-to-refresh.
+Installable Android client for the VolvSwedBY Telegram Mini App. It keeps the existing React interface and all club functions, while adding an Android-native container for authentication, secure session storage, navigation, file uploads, downloads, deep links, offline errors.
 
 ## Included
 
