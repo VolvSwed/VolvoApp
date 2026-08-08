@@ -1,0 +1,16 @@
+*.iml
+.gradle/
+.idea/
+local.properties
+build/
+app/build/
+captures/
+.externalNativeBuild/
+.cxx/
+*.jks
+*.keystore
+keystore.properties
+ios/VolvSwedBY.xcodeproj/
+ios/DerivedData/
+**/xcuserdata/
+*.xcuserstate

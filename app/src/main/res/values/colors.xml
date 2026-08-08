@@ -1,0 +1,7 @@
+<resources>
+    <color name="volvo_blue">#0A4C82</color>
+    <color name="volvo_blue_dark">#073A64</color>
+    <color name="volvo_background">#F3F6F8</color>
+    <color name="volvo_text">#15232E</color>
+    <color name="white">#FFFFFF</color>
+</resources>

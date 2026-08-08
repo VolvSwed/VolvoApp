@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">VolvSwedBY</string>
+    <string name="loading">Подключаемся к VolvSwedBY…</string>
+    <string name="login_title">VolvSwedBY</string>
+    <string name="login_message">Войдите через Telegram, чтобы открыть клубное приложение.</string>
+    <string name="login_button">Войти через Telegram</string>
+    <string name="retry">Повторить</string>
+    <string name="network_error_title">Нет подключения</string>
+    <string name="network_error_message">Проверьте интернет и повторите попытку.</string>
+    <string name="server_error_title">Приложение недоступно</string>
+    <string name="server_error_message">Не удалось открыть VolvSwedBY. Попробуйте ещё раз.</string>
+    <string name="login_error">Не удалось завершить вход через Telegram.</string>
+    <string name="download_started">Загрузка началась</string>
+    <string name="download_failed">Не удалось начать загрузку</string>
+    <string name="file_chooser">Выберите файл</string>
+</resources>

@@ -1,0 +1,12 @@
+<resources>
+    <style name="Theme.VolvoClub" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/volvo_blue</item>
+        <item name="colorPrimaryDark">@color/volvo_blue_dark</item>
+        <item name="colorAccent">@color/volvo_blue</item>
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:statusBarColor">@color/volvo_blue_dark</item>
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:windowActionModeOverlay">true</item>
+    </style>
+</resources>
