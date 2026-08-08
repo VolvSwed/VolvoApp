@@ -83,10 +83,10 @@ class MainActivity : AppCompatActivity() {
         configureWebView()
 
         binding.statusAction.setOnClickListener { startTelegramLogin() }
-        binding.swipeRefresh.setOnRefreshListener { binding.webView.reload() }
-        binding.swipeRefresh.setOnChildScrollUpCallback { _, _ ->
-            binding.webView.canScrollVertically(-1)
-        }
+        // The web client owns vertical scrolling, especially inside the chat.
+        // Disabling the parent gesture prevents a downward chat scroll from
+        // being interpreted as a full-page pull-to-refresh.
+        binding.swipeRefresh.isEnabled = false
 
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
