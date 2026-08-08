@@ -21,15 +21,18 @@ fetch(apiUrl(path), {
 
 ## `web/src/app.tsx`
 
-Treat the Android container as an authenticated context. The app already appends `VolvoClubAndroid/<version>` to the WebView user agent and opens `?platform=android`:
+Treat both native containers as authenticated contexts. Android appends `VolvoClubAndroid/<version>`, iOS appends `VolvoClubIOS/<version>`, and both pass their platform in the query string:
 
 ```ts
-const isAndroidApp =
-  new URLSearchParams(window.location.search).get("platform") === "android" ||
-  navigator.userAgent.includes("VolvoClubAndroid/");
+const platform = new URLSearchParams(window.location.search).get("platform");
+const isMobileApp =
+  platform === "android" ||
+  platform === "ios" ||
+  navigator.userAgent.includes("VolvoClubAndroid/") ||
+  navigator.userAgent.includes("VolvoClubIOS/");
 
 const initData = await waitForTelegramInitData();
-if (!initData && !isAndroidApp) {
+if (!initData && !isMobileApp) {
   throw new ApiError("Telegram context is missing", 0, "TELEGRAM_CONTEXT_MISSING");
 }
 ```

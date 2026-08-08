@@ -1,6 +1,8 @@
-# VolvSwedBY for Android
+# VolvSwedBY Mobile
 
-Installable Android client for the VolvSwedBY Telegram Mini App. It keeps the existing React interface and all club functions, while adding an Android-native container for authentication, secure session storage, navigation, file uploads, downloads, deep links, offline errors.
+Native Android and iOS clients for the VolvSwedBY Telegram Mini App. Both keep the existing React interface and club backend while adding platform-native authentication, secure session storage, navigation, files and notifications.
+
+The Android application lives in `app/`. The iOS application lives in `ios/`; see [ios/README.md](ios/README.md) for Xcode, device signing, APNs and TestFlight preparation.
 
 ## Included
 
@@ -15,6 +17,15 @@ Installable Android client for the VolvSwedBY Telegram Mini App. It keeps the ex
 - HTTPS-only network policy, Safe Browsing and blocked mixed content;
 - adaptive launcher icon;
 - CI build, unit tests and debug APK artifact.
+
+iOS additionally includes:
+
+- iOS 16+ SwiftUI/WKWebView client;
+- Telegram OIDC through `ASWebAuthenticationSession`;
+- Keychain-protected mobile session;
+- native APNs registration and push deep links;
+- system external links and WebKit downloads;
+- simulator build and unit-test CI on macOS.
 
 ## Architecture
 
@@ -52,15 +63,16 @@ gradle :app:bundleRelease
 
 The application ID is `club.volvoswed.app`. Register this package and the release SHA-256 fingerprint in Google Play and use the same identity when configuring Android App Links.
 
-## Server setup still required
+## Server setup
 
-Before the APK can log in outside Telegram:
+The shared backend must provide mobile sessions for both native platforms:
 
 1. enable Telegram Web Login / OIDC for the club bot in BotFather;
 2. register `https://volvswed.site/mobile/auth/callback`;
-3. deploy the mobile session endpoints;
+3. deploy the mobile session endpoints and allow `platform=android` and `platform=ios`;
 4. let existing API middleware accept the mobile session cookie;
 5. apply the React adapter;
-6. publish `https://volvswed.site/.well-known/assetlinks.json` after the release signing certificate is known.
+6. for iOS push, configure the APNs `.p8` credentials described in [ios/README.md](ios/README.md);
+7. publish `https://volvswed.site/.well-known/assetlinks.json` after the Android release signing certificate is known.
 
-Until these backend steps are deployed, the Android project builds but Telegram sign-in intentionally cannot complete.
+Android mobile sessions are already implemented in the shared backend; the iOS platform flag and APNs registration are the additional server pieces for this change.

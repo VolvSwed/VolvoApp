@@ -10,3 +10,7 @@ captures/
 *.jks
 *.keystore
 keystore.properties
+ios/VolvSwedBY.xcodeproj/
+ios/DerivedData/
+**/xcuserdata/
+*.xcuserstate

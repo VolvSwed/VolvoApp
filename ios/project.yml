@@ -1,0 +1,52 @@
+name: VolvSwedBY
+options:
+  bundleIdPrefix: club.volvoswed
+  deploymentTarget:
+    iOS: "16.0"
+  createIntermediateGroups: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    VOLVO_WEB_APP_URL: "https://volvswed.site"
+    VOLVO_API_BASE_URL: "https://volvswed.site"
+
+targets:
+  VolvSwedBY:
+    type: application
+    platform: iOS
+    sources:
+      - path: VolvSwedBY
+    info:
+      path: VolvSwedBY/Info.plist
+    entitlements:
+      path: VolvSwedBY/VolvSwedBY.entitlements
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: club.volvoswed.app
+        PRODUCT_NAME: VolvSwedBY
+        MARKETING_VERSION: 1.0.0
+        CURRENT_PROJECT_VERSION: 1
+        INFOPLIST_KEY_CFBundleDisplayName: VolvSwedBY
+        CODE_SIGN_STYLE: Automatic
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+      configs:
+        Debug:
+          APS_ENVIRONMENT: development
+        Release:
+          APS_ENVIRONMENT: production
+    scheme:
+      testTargets:
+        - VolvSwedBYTests
+
+  VolvSwedBYTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: VolvSwedBYTests
+    dependencies:
+      - target: VolvSwedBY
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: club.volvoswed.app.tests
+        GENERATE_INFOPLIST_FILE: YES
